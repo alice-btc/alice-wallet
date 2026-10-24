@@ -1,13 +1,19 @@
 # Alice Wallet
 
-Alice Wallet is a self-custodial Bitcoin wallet with the Alice AI companion
-built in. It pays over Arkade, Lightning (through Boltz and Satora swaps) and
-on-chain Bitcoin, keeps its seed on the device, and lets you ask Alice about
-Bitcoin without her ever seeing your keys.
+Alice Wallet is an **experimental proof of concept**: a new self-custodial
+Bitcoin wallet with the Alice AI companion built in. It pays over Arkade,
+Lightning (through Boltz and Satora swaps) and on-chain Bitcoin, keeps its
+seed on the device, and lets you ask Alice about Bitcoin without her ever
+seeing your keys.
 
-It is in **mainnet beta**, has **not been audited** by a third party, and is
-validated with **small amounts only**. Do not keep funds in it that you cannot
-afford to lose.
+**It is a beta.** The code has not been audited by a third party and the
+wallet is validated with small amounts only. Do not use it with funds you
+cannot afford to lose, and do not make it your main wallet.
+
+**To try it without risking anything**, use the Mutinynet version,
+<https://mutinynet.alicebtc.com>: the same wallet on a test network whose
+coins are worthless by design. <https://faucet.mutinynet.com> gives test coins
+for free.
 
 ## Where to get it
 
@@ -16,8 +22,8 @@ afford to lose.
   release page; the next one is released from here. How to verify what you
   were given is in [docs/BETA_TESTING.md](docs/BETA_TESTING.md).
 - **PWA**: <https://wallet.alicebtc.com> (Bitcoin mainnet, real funds) and
-  <https://mutinynet.alicebtc.com> (Mutinynet, a test network whose coins are
-  worthless by design). Both run the same code as the APK in a browser.
+  <https://mutinynet.alicebtc.com> (Mutinynet, test coins). Both run the same
+  code as the APK in a browser.
 
 Do not rely on a URL alone to identify a build: check its version and commit
 on the About screen. Never share your recovery phrase, and never send it to Alice: she
