@@ -1,0 +1,297 @@
+{
+  "status": "acceptance_fixture",
+  "purpose": "Attentes documentaires définies avant intégration du corpus ; résultats enregistrés séparément.",
+  "cases": [
+    {
+      "id": "case-01",
+      "question": "C’est quoi un UTXO ?",
+      "kind": "general",
+      "primary_candidates": [
+        "bitcoin-utxo"
+      ],
+      "secondary_candidates": [],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-02",
+      "question": "Explique davantage le choix des entrées et son effet sur la confidentialité.",
+      "kind": "followup",
+      "primary_candidates": [
+        "bitcoin-utxo"
+      ],
+      "secondary_candidates": [
+        "coin-selection-tradeoffs",
+        "change-privacy-linking"
+      ],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-03",
+      "question": "Comment identifier la monnaie rendue à partir du type de sortie ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [],
+      "secondary_candidates": [
+        "change-privacy-linking"
+      ],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-04",
+      "question": "À quoi sert un nœud si je ne mine pas ?",
+      "kind": "general",
+      "primary_candidates": [
+        "bitcoin-node"
+      ],
+      "secondary_candidates": [],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-05",
+      "question": "Un nœud élagué peut-il me fournir un vieux bloc supprimé ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [],
+      "secondary_candidates": [
+        "pruned-node-history"
+      ],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-06",
+      "question": "Pourquoi la première synchronisation reste-t-elle longue avec élagage ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [],
+      "secondary_candidates": [
+        "node-initial-sync",
+        "pruned-node-history"
+      ],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-07",
+      "question": "À quoi sert le minage ?",
+      "kind": "general",
+      "primary_candidates": [
+        "bitcoin-mining"
+      ],
+      "secondary_candidates": [],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-08",
+      "question": "La difficulté réagit-elle immédiatement à une chute de hashrate ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [],
+      "secondary_candidates": [
+        "mining-difficulty-details"
+      ],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-09",
+      "question": "Pourquoi mon paiement Lightning échoue-t-il malgré mon solde ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [],
+      "secondary_candidates": [
+        "lightning-liquidity-path"
+      ],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-10",
+      "question": "À quoi sert le playground ?",
+      "kind": "general",
+      "primary_candidates": [
+        "alice-playground"
+      ],
+      "secondary_candidates": [],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-11",
+      "question": "Un paiement réussi dans le playground garantit-il le même résultat sur mainnet ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [],
+      "secondary_candidates": [
+        "playground-testnet-limits"
+      ],
+      "expected": "Retrouver les fiches pertinentes, puis sélectionner les seuls passages nécessaires."
+    },
+    {
+      "id": "case-12",
+      "question": "Quel est le solde actuel de mon portefeuille personnel ?",
+      "kind": "unsupported-live-data",
+      "primary_candidates": [],
+      "secondary_candidates": [],
+      "expected": "Ne pas inventer un solde ; expliquer l’absence de données personnelles dans ce corpus."
+    },
+    {
+      "id": "case-13",
+      "question": "Comment ajouter des fonds à mon canal sans le fermer ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [],
+      "secondary_candidates": [
+        "lightning-splicing"
+      ],
+      "expected": "Expliquer splice-in, coordination, frais et support des pairs ; ne pas confondre ajout de fonds locaux et liquidité entrante."
+    },
+    {
+      "id": "case-14",
+      "question": "J’ai reçu des bitcoins on-chain, la capacité de mon canal augmente-t-elle automatiquement ?",
+      "kind": "followup",
+      "primary_candidates": [
+        "lightning-network"
+      ],
+      "secondary_candidates": [
+        "lightning-splicing",
+        "lightning-liquidity-path"
+      ],
+      "expected": "Distinguer réception on-chain, opération de splicing et liquidité disponible dans chaque sens."
+    },
+    {
+      "id": "case-15",
+      "question": "Pourquoi les adresses Bitcoin n’ont-elles pas toutes le même début ?",
+      "kind": "general",
+      "primary_candidates": [
+        "legacy-address"
+      ],
+      "secondary_candidates": [],
+      "expected": "Attente documentaire proposée, sans résultat de recherche observé."
+    },
+    {
+      "id": "case-16",
+      "question": "Une adresse en 3 peut-elle utiliser SegWit, et que révèle son script ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [
+        "legacy-address"
+      ],
+      "secondary_candidates": [
+        "bitcoin-address-scripts"
+      ],
+      "expected": "Attente documentaire proposée, sans résultat de recherche observé."
+    },
+    {
+      "id": "energy-general",
+      "question": "Le minage peut-il être utile à la transition énergétique ?",
+      "kind": "general",
+      "primary_candidates": [
+        "bitcoin-energy-debate"
+      ],
+      "secondary_candidates": [],
+      "expected": "Distinguer preuve de travail, consommation et usages énergétiques sans affirmer un bénéfice universel."
+    },
+    {
+      "id": "energy-surplus",
+      "question": "Les mineurs prennent-ils de l’électricité qui aurait pu alimenter des habitants ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [
+        "bitcoin-energy-debate"
+      ],
+      "secondary_candidates": [
+        "mining-curtailed-energy",
+        "mining-grid-flexibility"
+      ],
+      "expected": "Décrire les cas de surplus et les cas de réseau partagé ; éviter toute absence de concurrence universelle."
+    },
+    {
+      "id": "energy-methane",
+      "question": "Miner avec du méthane réduit-il toujours les émissions ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [],
+      "secondary_candidates": [
+        "mining-methane-mitigation"
+      ],
+      "expected": "Distinguer éventage, torchage, modèle et projet annoncé ; comparer les émissions au scénario sans projet."
+    },
+    {
+      "id": "energy-heat",
+      "question": "Un ASIC chauffe-t-il plus efficacement qu’une pompe à chaleur ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [],
+      "secondary_candidates": [
+        "mining-heat-reuse-details"
+      ],
+      "expected": "Séparer efficacité thermique, chaleur utile et revenu minier ; utiliser les hypothèses de comparaison."
+    },
+    {
+      "id": "energy-renewables",
+      "question": "Le minage peut-il financer une nouvelle centrale renouvelable ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [],
+      "secondary_candidates": [
+        "mining-renewable-projects"
+      ],
+      "expected": "Distinguer achat renouvelable, recette supplémentaire et capacité additionnelle démontrée."
+    },
+    {
+      "id": "inflation-general",
+      "question": "C’est quoi l’inflation ?",
+      "kind": "general",
+      "primary_candidates": [
+        "inflation"
+      ],
+      "secondary_candidates": [],
+      "expected": "Donner le sens statistique usuel et signaler les usages monétaires attribués si pertinents."
+    },
+    {
+      "id": "inflation-perspectives",
+      "question": "Pourquoi les premiers receveurs de monnaie peuvent-ils être avantagés ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [
+        "inflation"
+      ],
+      "secondary_candidates": [
+        "inflation-monetary-perspectives"
+      ],
+      "expected": "Expliquer le mécanisme et les lectures attribuées sans transformer une analyse en résultat universel."
+    },
+    {
+      "id": "case-24",
+      "question": "Quelle différence entre Spark, Bark et Arkade ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [
+        "bitcoin-layered-architecture"
+      ],
+      "secondary_candidates": [
+        "spark-trust-and-exits",
+        "ark-implementations-bark-arkade"
+      ],
+      "expected": "Comparer transfert, rôle opérateur et conditions de sortie, sans promettre les mêmes garanties."
+    },
+    {
+      "id": "case-25",
+      "question": "Fedimint me permet-il de récupérer seul mes bitcoins si les gardiens disparaissent ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [
+        "self-custody",
+        "cashu-et-confiance-dans-le-mint"
+      ],
+      "secondary_candidates": [
+        "fedimint-custody-and-privacy"
+      ],
+      "expected": "Expliquer garde fédérée et dépendance à la fédération ; ne pas inventer une sortie autonome."
+    },
+    {
+      "id": "case-26",
+      "question": "Puis-je utiliser toutes les fonctions Alice sans connexion ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [
+        "alice-offline-limits",
+        "alice-learn",
+        "alice-explorer"
+      ],
+      "secondary_candidates": [],
+      "expected": "Distinguer IA locale, données présentes, cache, services distants et diffusion des paiements."
+    },
+    {
+      "id": "case-27",
+      "question": "Mon ordinateur et mon hardware wallet affichent des adresses différentes, laquelle vérifier ?",
+      "kind": "specific-first-turn",
+      "primary_candidates": [
+        "hardware-wallet",
+        "address-spoofing"
+      ],
+      "secondary_candidates": [],
+      "expected": "Référence de confirmation sur appareil de signature ; comparaison avec adresse attendue obtenue de source fiable, pas de validation automatique."
+    }
+  ]
+}

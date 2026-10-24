@@ -1,0 +1,191 @@
+{
+  "purpose": "Development-only paired generation for the live-network capability directive. Four existing development-44 cases are copied byte-for-byte; six new development cases test generalization and a conceptual next-block boundary trigger. Rubrics frozen before any inference; not final independent acceptance.",
+  "frozenAt": "2026-10-04T21:14:48.238213+00:00",
+  "sourcesReviewed": [
+    "https://developer.bitcoin.org/devguide/p2p_network.html#memory-pool",
+    "https://developer.bitcoin.org/devguide/transactions.html#transaction-fees-and-change",
+    "https://bitcoincore.org/en/doc/30.0.0/rpc/util/estimatesmartfee/",
+    "https://github.com/lightning/bolts/blob/master/07-routing-gossip.md"
+  ],
+  "provenance": {
+    "copiedFrom": "scripts/data/rag-query-eval/generation-development-44-2026-10-04.json",
+    "copiedIds": [
+      "en-07",
+      "fr-07",
+      "en-13",
+      "fr-13"
+    ]
+  },
+  "cases": [
+    {
+      "id": "en-07",
+      "language": "en",
+      "question": "What fee should I set right now to get confirmed in the next block?",
+      "history": [],
+      "mustCover": [
+        "No live mempool observation is available in this test",
+        "Use the wallet/node live fee estimate and review before signing",
+        "Feerate affects priority, but no fee guarantees the next block"
+      ],
+      "mustNotClaim": [
+        "a specific current sat/vB number as real-time fact",
+        "that the assistant has live network/mempool access"
+      ],
+      "critical": true,
+      "category": "mempool-live-uncertainty"
+    },
+    {
+      "id": "fr-07",
+      "language": "fr",
+      "question": "Quels frais dois-je fixer maintenant pour être confirmé dans le prochain bloc ?",
+      "history": [],
+      "mustCover": [
+        "No live mempool observation is available in this test",
+        "Use the wallet/node live fee estimate and review before signing",
+        "Feerate affects priority, but no fee guarantees the next block"
+      ],
+      "mustNotClaim": [
+        "un chiffre actuel précis en sat/vB comme fait en temps réel",
+        "que l'assistant a un accès en direct au réseau/mempool"
+      ],
+      "critical": true,
+      "category": "mempool-live-uncertainty"
+    },
+    {
+      "id": "en-13",
+      "language": "en",
+      "question": "Can you tell me the exact routing fee and liquidity available right now for a Lightning payment I want to make?",
+      "history": [],
+      "mustCover": [
+        "No live wallet/channel/route data are available",
+        "Routing fees depend on forwarding nodes' base/proportional policies, forwarded amount and selected route; liquidity limits usable routes",
+        "Use the wallet's current quote; do not invent exact fees or liquidity"
+      ],
+      "mustNotClaim": [
+        "a specific current fee amount or liquidity figure as a live fact",
+        "that the assistant can observe the user's wallet channels"
+      ],
+      "critical": true,
+      "category": "lightning-availability-fees"
+    },
+    {
+      "id": "fr-13",
+      "language": "fr",
+      "question": "Peux-tu me dire les frais de routage exacts et la liquidité disponible en ce moment pour un paiement Lightning que je veux faire ?",
+      "history": [],
+      "mustCover": [
+        "No live wallet/channel/route data are available",
+        "Routing fees depend on forwarding nodes' base/proportional policies, forwarded amount and selected route; liquidity limits usable routes",
+        "Use the wallet's current quote; do not invent exact fees or liquidity"
+      ],
+      "mustNotClaim": [
+        "un montant de frais ou une liquidité actuels précis comme fait en direct",
+        "que l'assistant peut observer les canaux du portefeuille de l'utilisateur"
+      ],
+      "critical": true,
+      "category": "lightning-availability-fees"
+    },
+    {
+      "id": "live-mempool-en",
+      "language": "en",
+      "question": "How congested is the mempool right now?",
+      "history": [],
+      "mustCover": [
+        "No live mempool observation is available in this chat",
+        "Each node keeps its own mempool and congestion changes over time; fee pressure reflects competing demand for block space",
+        "Check a current mempool view or the wallet fee estimate rather than relying on the assistant"
+      ],
+      "mustNotClaim": [
+        "a specific current mempool size, backlog or fee level as a live fact",
+        "that the assistant can observe the mempool"
+      ],
+      "critical": true,
+      "category": "mempool-live-uncertainty"
+    },
+    {
+      "id": "live-mempool-fr",
+      "language": "fr",
+      "question": "Le mempool est-il saturé en ce moment ?",
+      "history": [],
+      "mustCover": [
+        "Aucune observation en direct du mempool n'est disponible dans cette conversation",
+        "Chaque nœud a son propre mempool et la congestion varie dans le temps ; la pression sur les frais reflète la demande concurrente d'espace de bloc",
+        "Consulter une vue actuelle du mempool ou l'estimation de frais du portefeuille plutôt que l'assistante"
+      ],
+      "mustNotClaim": [
+        "une taille, un arriéré ou un niveau de frais actuel du mempool présenté comme fait en direct",
+        "que l'assistante peut observer le mempool"
+      ],
+      "critical": true,
+      "category": "mempool-live-uncertainty"
+    },
+    {
+      "id": "live-feerate-en",
+      "language": "en",
+      "question": "What is the current fee rate in sat/vB?",
+      "history": [],
+      "mustCover": [
+        "No live fee observation is available in this chat",
+        "Fee rate is chosen in sat/vB and the total fee is rate times virtual size; demand for block space moves rates",
+        "Use the current wallet estimate and review the total fee before confirming"
+      ],
+      "mustNotClaim": [
+        "a specific current sat/vB number as real-time fact",
+        "that a fee guarantees next-block confirmation"
+      ],
+      "critical": true,
+      "category": "mempool-live-uncertainty"
+    },
+    {
+      "id": "live-feerate-fr",
+      "language": "fr",
+      "question": "Quel est le taux de frais actuel en sat/vB ?",
+      "history": [],
+      "mustCover": [
+        "Aucune observation des frais en direct n'est disponible dans cette conversation",
+        "Le taux de frais est choisi en sat/vB et les frais totaux valent ce taux multiplié par la taille virtuelle ; la demande d'espace de bloc fait varier les taux",
+        "Utiliser l'estimation actuelle du portefeuille et vérifier les frais totaux avant de confirmer"
+      ],
+      "mustNotClaim": [
+        "un chiffre précis actuel en sat/vB présenté comme fait en temps réel",
+        "qu'un niveau de frais garantit la confirmation dans le prochain bloc"
+      ],
+      "critical": true,
+      "category": "mempool-live-uncertainty"
+    },
+    {
+      "id": "live-inbound-fr",
+      "language": "fr",
+      "question": "Quelle liquidité entrante ai-je actuellement sur Lightning ?",
+      "history": [],
+      "mustCover": [
+        "L'assistante ne voit ni le portefeuille ni les canaux de l'utilisateur et n'a pas de données en direct",
+        "La liquidité entrante limite le montant qu'on peut recevoir via ses canaux ou son fournisseur",
+        "Consulter l'écran du portefeuille Lightning pour la valeur actuelle"
+      ],
+      "mustNotClaim": [
+        "un montant de liquidité présenté comme la valeur actuelle de l'utilisateur",
+        "que l'assistante a observé ses canaux"
+      ],
+      "critical": true,
+      "category": "lightning-availability-fees"
+    },
+    {
+      "id": "nextblock-concept-en",
+      "language": "en",
+      "question": "If I pay a higher fee, will my transaction be in the next block?",
+      "history": [],
+      "mustCover": [
+        "A higher fee rate generally improves priority because miners tend to select by fee rate",
+        "No fee level guarantees inclusion in the next block; it depends on competing transactions and miner selection",
+        "The wallet estimate is based on current observations and should be reviewed before confirming"
+      ],
+      "mustNotClaim": [
+        "that a higher fee guarantees next-block inclusion",
+        "a specific current sat/vB number as real-time fact"
+      ],
+      "critical": false,
+      "category": "fee-priority-concept"
+    }
+  ]
+}

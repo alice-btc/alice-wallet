@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "baselineCommit": "c84fc611",
+  "description": "Fresh independent evaluation fixture for Alice Bitcoin retrieval, focused on transaction fee questions, adjacent fee-adjacent topics, multi-turn follow-ups with language switches, other Bitcoin topics, and no-retrieval personal messages. Assistant messages are placeholders and must not influence retrieval. Only final user turns are scored.",
+  "cases": [
+    {
+      "id": "fee-01",
+      "category": "standalone",
+      "language": "fr",
+      "history": [],
+      "question": "Pourquoi les frais sur une transaction Bitcoin varient autant d'un jour à l'autre ?",
+      "relevantConceptGroups": [
+        [
+          "transaction-fees"
+        ]
+      ]
+    },
+    {
+      "id": "fee-02",
+      "category": "standalone",
+      "language": "en",
+      "history": [],
+      "question": "Why do fees on a Bitcoin transaction change so much depending on when I send it?",
+      "relevantConceptGroups": [
+        [
+          "transaction-fees"
+        ]
+      ]
+    },
+    {
+      "id": "fee-03",
+      "category": "standalone",
+      "language": "fr",
+      "history": [],
+      "question": "Comment est déterminé le montant des frais quand j'envoie du bitcoin en chaîne ?",
+      "relevantConceptGroups": [
+        [
+          "transaction-fees"
+        ]
+      ]
+    },
+    {
+      "id": "fee-04",
+      "category": "followup",
+      "language": "en",
+      "history": [
+        {
+          "role": "user",
+          "content": "I just sent an on-chain Bitcoin payment."
+        },
+        {
+          "role": "assistant",
+          "content": "Previous explanation."
+        }
+      ],
+      "question": "Why am I paying so much just to send a small amount on-chain?",
+      "relevantConceptGroups": [
+        [
+          "transaction-fees"
+        ]
+      ]
+    },
+    {
+      "id": "fee-05",
+      "category": "followup",
+      "language": "fr",
+      "history": [
+        {
+          "role": "user",
+          "content": "J'ai envoyé du bitcoin en chaîne."
+        },
+        {
+          "role": "assistant",
+          "content": "Explication précédente."
+        }
+      ],
+      "question": "Pourquoi les frais sont plus élevés quand le réseau est chargé ?",
+      "relevantConceptGroups": [
+        [
+          "transaction-fees"
+        ]
+      ]
+    },
+    {
+      "id": "fee-06",
+      "category": "standalone",
+      "language": "en",
+      "history": [],
+      "question": "What determines the fee rate expressed in sats per vbyte for a transaction?",
+      "relevantConceptGroups": [
+        [
+          "transaction-fees"
+        ]
+      ]
+    },
+    {
+      "id": "adjacent-07",
+      "category": "standalone",
+      "language": "fr",
+      "history": [],
+      "question": "Est-ce que les paiements Lightning ont aussi des frais ?",
+      "relevantConceptGroups": [
+        [
+          "lightning-introduction",
+          "lightning-network"
+        ]
+      ]
+    },
+    {
+      "id": "adjacent-08",
+      "category": "standalone",
+      "language": "en",
+      "history": [],
+      "question": "Are Lightning payments really cheaper than on-chain Bitcoin fees?",
+      "relevantConceptGroups": [
+        [
+          "lightning-introduction",
+          "lightning-network"
+        ]
+      ]
+    },
+    {
+      "id": "adjacent-09",
+      "category": "standalone",
+      "language": "fr",
+      "history": [],
+      "question": "Ma transaction est coincée dans le mempool, comment augmenter les frais pour qu'elle confirme ?",
+      "relevantConceptGroups": [
+        [
+          "mempool",
+          "replace-by-fee"
+        ]
+      ]
+    },
+    {
+      "id": "adjacent-10",
+      "category": "standalone",
+      "language": "en",
+      "history": [],
+      "question": "Do Ark or Arkade payments involve on-chain fees when I exit back to Bitcoin?",
+      "relevantConceptGroups": [
+        [
+          "ark-rounds-exits",
+          "ark-tradeoffs"
+        ]
+      ]
+    },
+    {
+      "id": "switch-11",
+      "category": "switch",
+      "language": "en",
+      "history": [
+        {
+          "role": "user",
+          "content": "Comment fonctionnent les frais d'une transaction Bitcoin en chaîne ?"
+        },
+        {
+          "role": "assistant",
+          "content": "Explication précédente."
+        }
+      ],
+      "question": "And what about Lightning fees instead?",
+      "relevantConceptGroups": [
+        [
+          "lightning-introduction",
+          "lightning-network"
+        ]
+      ]
+    },
+    {
+      "id": "switch-12",
+      "category": "switch",
+      "language": "fr",
+      "history": [
+        {
+          "role": "user",
+          "content": "How do Lightning fees work compared to on-chain fees?"
+        },
+        {
+          "role": "assistant",
+          "content": "Previous explanation."
+        }
+      ],
+      "question": "Et sur Ark, les frais ça fonctionne comment ?",
+      "relevantConceptGroups": [
+        [
+          "ark-tradeoffs",
+          "ark-rounds-exits"
+        ]
+      ]
+    },
+    {
+      "id": "followup-13",
+      "category": "followup",
+      "language": "fr",
+      "history": [
+        {
+          "role": "user",
+          "content": "Ma transaction est coincée dans le mempool, comment augmenter les frais pour qu'elle confirme ?"
+        },
+        {
+          "role": "assistant",
+          "content": "Explication précédente."
+        }
+      ],
+      "question": "Et le RBF, c'est risqué à utiliser ?",
+      "relevantConceptGroups": [
+        [
+          "replace-by-fee"
+        ]
+      ]
+    },
+    {
+      "id": "followup-14",
+      "category": "followup",
+      "language": "en",
+      "history": [
+        {
+          "role": "user",
+          "content": "How do Bitcoin transaction fees work?"
+        },
+        {
+          "role": "assistant",
+          "content": "Previous explanation."
+        }
+      ],
+      "question": "Does batching multiple payments together reduce the fee?",
+      "relevantConceptGroups": [
+        [
+          "transaction-batching"
+        ]
+      ]
+    },
+    {
+      "id": "other-15",
+      "category": "standalone",
+      "language": "fr",
+      "history": [],
+      "question": "Pourquoi le nombre de bitcoins est-il limité à 21 millions ?",
+      "relevantConceptGroups": [
+        [
+          "bitcoin-monetary-properties"
+        ]
+      ]
+    },
+    {
+      "id": "other-16",
+      "category": "standalone",
+      "language": "en",
+      "history": [],
+      "question": "What happens to miner rewards during a Bitcoin halving?",
+      "relevantConceptGroups": [
+        [
+          "halving"
+        ]
+      ]
+    },
+    {
+      "id": "other-17",
+      "category": "standalone",
+      "language": "fr",
+      "history": [],
+      "question": "Comment l'ajustement de la difficulté permet-il de garder un bloc toutes les 10 minutes environ ?",
+      "relevantConceptGroups": [
+        [
+          "difficulty-adjustment"
+        ]
+      ]
+    },
+    {
+      "id": "other-18",
+      "category": "standalone",
+      "language": "en",
+      "history": [],
+      "question": "What's the difference between a full node and a pruned node?",
+      "relevantConceptGroups": [
+        [
+          "node-types"
+        ]
+      ]
+    },
+    {
+      "id": "other-19",
+      "category": "standalone",
+      "language": "fr",
+      "history": [],
+      "question": "Pourquoi le Bitcoin est-il devenu monnaie légale au Salvador ?",
+      "relevantConceptGroups": [
+        [
+          "el-salvador"
+        ]
+      ]
+    },
+    {
+      "id": "other-20",
+      "category": "standalone",
+      "language": "en",
+      "history": [],
+      "question": "What did Taproot actually change about Bitcoin transactions?",
+      "relevantConceptGroups": [
+        [
+          "segwit-taproot"
+        ]
+      ]
+    },
+    {
+      "id": "no-retrieval-21",
+      "category": "no-retrieval",
+      "language": "fr",
+      "history": [
+        {
+          "role": "user",
+          "content": "C'est quoi Ark ?"
+        },
+        {
+          "role": "assistant",
+          "content": "Explication précédente."
+        }
+      ],
+      "question": "Au fait, comment vas-tu aujourd'hui ?",
+      "relevantConceptGroups": []
+    },
+    {
+      "id": "no-retrieval-22",
+      "category": "no-retrieval",
+      "language": "en",
+      "history": [
+        {
+          "role": "user",
+          "content": "My transaction is stuck in the mempool."
+        },
+        {
+          "role": "assistant",
+          "content": "Previous explanation."
+        }
+      ],
+      "question": "By the way, I had a really long day at work.",
+      "relevantConceptGroups": []
+    },
+    {
+      "id": "no-retrieval-23",
+      "category": "no-retrieval",
+      "language": "fr",
+      "history": [],
+      "question": "Tu peux m'appeler Marius.",
+      "relevantConceptGroups": []
+    },
+    {
+      "id": "no-retrieval-24",
+      "category": "no-retrieval",
+      "language": "en",
+      "history": [],
+      "question": "Can you remember my name for next time?",
+      "relevantConceptGroups": []
+    }
+  ]
+}
